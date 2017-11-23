@@ -1,5 +1,8 @@
 #pragma mark - Util
 
+#import <UIKit/UIKit.h>
+
+
 @interface WCBizUtil : NSObject
 
 + (id)dictionaryWithDecodedComponets:(id)arg1 separator:(id)arg2;
@@ -175,6 +178,7 @@
 + (id)normalCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 rightValue:(id)arg4 accessoryType:(long long)arg5;
 + (id)normalCellForTitle:(id)arg1 rightValue:(id)arg2;
 + (id)urlCellForTitle:(id)arg1 url:(id)arg2;
++ (id)editorCellForSel:(SEL)arg1 target:(id)arg2 title:(id)arg3 margin:(double)arg4 tip:(id)arg5 focus:(_Bool)arg6 text:(id)arg7;
 
 @end
 

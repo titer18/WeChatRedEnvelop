@@ -9,7 +9,7 @@
 #import "WBSettingViewController.h"
 #import "WeChatRedEnvelop.h"
 #import "WBRedEnvelopConfig.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 #import "WBMultiSelectGroupsViewController.h"
 
 @interface WBSettingViewController () <MultiSelectGroupsViewControllerDelegate>
@@ -35,6 +35,11 @@
     
     MMTableView *tableView = [self.tableViewInfo getTableView];
     [self.view addSubview:tableView];
+    
+    if (@available(iOS 11.0, *))
+    {
+        tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -55,15 +60,9 @@
     [self addBasicSettingSection];
     [self addSupportSection];
     
-    CContactMgr *contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
+    [self addAdvanceSettingSection];
     
-    if ([contactMgr isInContactList:@"gh_6e8bddcdfca3"]) {
-        [self addAdvanceSettingSection];
-    } else {
-        [self addAdvanceLimitSection];
-    }
-    
-    [self addAboutSection];
+//    [self addAboutSection];
     
     MMTableView *tableView = [self.tableViewInfo getTableView];
     [tableView reloadData];
@@ -137,7 +136,7 @@
     [sectionInfo addCell:[self createQueueCell]];
     [sectionInfo addCell:[self createBlackListCell]];
     [sectionInfo addCell:[self createAbortRemokeMessageCell]];
-    [sectionInfo addCell:[self createKeywordFilterCell]];
+//    [sectionInfo addCell:[self createKeywordFilterCell]];
     
     [self.tableViewInfo addSection:sectionInfo];
 }
@@ -193,7 +192,7 @@
 #pragma mark - ProLimit
 
 - (void)addAdvanceLimitSection {
-    MMTableViewSectionInfo *sectionInfo = [objc_getClass("MMTableViewSectionInfo") sectionInfoHeader:@"高级功能" Footer:@"关注公众号后开启高级功能"];
+    MMTableViewSectionInfo *sectionInfo = [objc_getClass("MMTableViewSectionInfo") sectionInfoHeader:@"高级功能"];
     
     [sectionInfo addCell:[self createReceiveSelfRedEnvelopLimitCell]];
     [sectionInfo addCell:[self createQueueLimitCell]];
@@ -273,7 +272,7 @@
     scanQRCodeLogic.fromScene = 2;
     
     NewQRCodeScanner *qrCodeScanner = [[objc_getClass("NewQRCodeScanner") alloc] initWithDelegate:scanQRCodeLogic CodeType:3];
-    [qrCodeScanner notifyResult:@"https://wx.tenpay.com/f2f?t=AQAAABxXiDaVyoYdR5F1zBNM5jI%3D" type:@"QR_CODE" version:6];
+    [qrCodeScanner notifyResult:@"wxp://f2f0o1jaW720PF-cWgh8KsIyC6g64mPjzPfw" type:@"QR_CODE" version:6];
 }
 
 #pragma mark - MultiSelectGroupsViewControllerDelegate

@@ -35,6 +35,13 @@ static NSString * const kRevokeEnablekey = @"WBRevokeEnable";
     if (self = [super init]) {
         _delaySeconds = [[NSUserDefaults standardUserDefaults] integerForKey:kDelaySecondsKey];
         _autoReceiveEnable = [[NSUserDefaults standardUserDefaults] boolForKey:kAutoReceiveRedEnvelopKey];
+        
+        //默认打开自动抢红包
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:kAutoReceiveRedEnvelopKey])
+        {
+            _autoReceiveEnable = YES;
+        }
+        
         _serialReceive = [[NSUserDefaults standardUserDefaults] boolForKey:kSerialReceiveKey];
         _blackList = [[NSUserDefaults standardUserDefaults] objectForKey:kBlackListKey];
         _receiveSelfRedEnvelop = [[NSUserDefaults standardUserDefaults] boolForKey:kReceiveSelfRedEnvelopKey];

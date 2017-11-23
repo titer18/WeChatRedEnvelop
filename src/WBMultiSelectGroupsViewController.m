@@ -8,7 +8,7 @@
 
 #import "WBMultiSelectGroupsViewController.h"
 #import "WeChatRedEnvelop.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 @interface WBMultiSelectGroupsViewController () <ContactSelectViewDelegate>
 
@@ -81,7 +81,14 @@
 }
 
 - (void)initSelectView {
-    self.selectView = [[objc_getClass("ContactSelectView") alloc] initWithFrame:[UIScreen mainScreen].bounds delegate:self];
+    CGRect frame = [UIScreen mainScreen].bounds;
+    if (@available(iOS 11.0, *))
+    {
+        frame.origin.y = 64;
+        frame.size.height -= frame.origin.y;
+    }
+    
+    self.selectView = [[objc_getClass("ContactSelectView") alloc] initWithFrame:frame delegate:self];
     
     self.selectView.m_uiGroupScene = 5;
     self.selectView.m_bMultiSelect = YES;
