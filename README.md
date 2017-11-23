@@ -1,24 +1,62 @@
-# iOS版微信抢红包插件Tweak
+# iOS版微信抢红包插件
 
-这个插件是我学习[iOS应用逆向工程](http://www.amazon.cn/iOS%E5%BA%94%E7%94%A8%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-%E6%B2%99%E6%A2%93%E7%A4%BE/dp/B00VFDVY7E/ref=sr_1_1?ie=UTF8&qid=1453170509&sr=8-1&keywords=ios%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)后做的一个练手的小插件。
+目前市面上最稳定、功能最全的 iOS 版微信抢红包插件。
 
-只要你的手机已经越狱，并且安装了这个 Tweak，登录你的微信后就可以自动抢红包，不需要任何的手动操作。
+## 功能特色
 
-**本插件只用于学习目的，请勿使用于别的用途**
+- **完全原生体验**
+
+    完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
+
+- **可自由设置延迟抢红包时间**
+
+    有效防止抢红包速度太快而被拉黑或者踢出群聊。
+
+- **可设置防止同时抢多个红包**
+
+    最大程度避免被系统检测出使用插件，红包抢得更安心。
+
+- **可设置过滤特定的群聊**
+
+    防止落入公司群或者点餐群抢红包的尴尬境地。
+
+- **更新速度快**
+ 
+    紧跟微信更新，社区活跃，失效后第一时间进行修复。
+
+- **安全、值得信赖**
+
+    源码完全公开透明，Cydia 市场超过万次下载，值得你拥有
 
 ## 安装方法
 
-有很多小伙伴都反应说不知道怎么安装，因此写了一篇博客来说明如何从源码安装 tweak。
+- 越狱手机
+    1. cydia 市场：直接在 cydia 市场搜索 `WeChatRedEnvelop`，下载安装即可
+    2. 手动编译安装：参考 [iOS微信抢红包Tweak安装教程](http://www.swiftyper.com/2016/01/25/ios-tweak-install-guide/) 教程
+- 非越狱手机：参考 [免越狱版 iOS 抢红包插件](http://www.swiftyper.com/2016/12/26/wechat-redenvelop-tweak-for-non-jailbroken-iphone/) 教程
 
-[教程地址](http://www.swiftyper.com/ios-tweak-install-guide/)
+## 更新日志
 
-## 反馈
+完整的更新日志请参考[CHANGELOG](./CHANGELOG.md)。
 
-如果碰到装上没有效果，或者程序闪退情况，可以直接提 issue 并说明设备版本，系统版本以及微信的版本，我会尽快着手修复的。
+## 版权及免责声明
 
-## 特别感谢
+本插件是由本人学习[iOS应用逆向工程](https://www.amazon.cn/gp/product/B00VFDVY7E/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00VFDVY7E&linkCode=as2&tag=buginux-23)后并由[该书作者](https://github.com/iosre)进行指导后开发的，所有代码都由本人完成。
 
-[狗神](https://github.com/iosre)，即 [iOS应用逆向工程](http://www.amazon.cn/iOS%E5%BA%94%E7%94%A8%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-%E6%B2%99%E6%A2%93%E7%A4%BE/dp/B00VFDVY7E/ref=sr_1_1?ie=UTF8&qid=1453170509&sr=8-1&keywords=ios%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B)的作者。
+外挂有风险，使用需谨慎。
 
-有了狗神的亲手指导，我才得以能快速完成这个 Tweak 的开发，感谢！
+要使用本插件，请使用者自行承担各种状况，包括但不限于“禁用红包功能”以及“微信封号”。
 
+## 应用截图
+
+<img src="./ScreenShots/Setting.jpeg" height="568" hspace="20">
+<img src="./ScreenShots/AssistantSetting.jpeg" height="568" hspace="20">
+
+## 支持作者
+
+本项目的所有逆向分析工作，代码编写工作都由本人一人完成。
+
+插件的开发占用了我大量的时间和精力，如果你觉得这个插件对你有帮助（帮你抢到了比之前更多的红包），不妨进行一下小额捐赠，这样我会有更大的动力去完善、优化它。
+
+<img src="./ScreenShots/WechatPay.jpeg" height="300" hspace="20">
+<img src="./ScreenShots/AliPay.jpeg" height="300" hspace="20">
